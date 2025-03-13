@@ -28,5 +28,4 @@ for char in range(0, how_many_numbers):
 for char in range(0, how_many_symbols):
     password += random.choice(symbols)
 
-print(password)
-print(len(password))
+print(f"The password generated is {password}")

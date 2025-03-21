@@ -1,6 +1,6 @@
 import random
-
-word_list = ['eren', 'ichigo', 'aretus', 'luffy', 'sukasa']
+import word_lists
+word_list = word_lists.word_list
 hangman_stages = [
     """
        ------
@@ -66,9 +66,9 @@ hangman_stages = [
     =========
     """
 ]
-
+print("welcome to python hangman!!")
 rando_word = random.choice(word_list)
-print(rando_word)
+#print(rando_word)
 
 wordlen = len(rando_word)
 

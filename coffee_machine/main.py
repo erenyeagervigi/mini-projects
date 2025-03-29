@@ -85,5 +85,9 @@ def make_coffee():
             print(arts.art1)
             break
 
-print(arts.art)
-make_coffee()
+def main():
+    print(arts.art)  
+    make_coffee()
+    
+if __name__ == "__main__":
+    main()

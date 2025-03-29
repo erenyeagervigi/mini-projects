@@ -11,15 +11,18 @@ def data(value):
 
 
 def resourcess(value):
+    """prints the supply of resources."""
     print(f"water: {value["water"]} ml")
     print(f"milk: {value["milk"]} ml")
     print(f"coffee: {value["coffee"]} g")
     print(f"money: ${profits}")
 
 def user_choice(user_needs):
+    """prints the cost of the particular beverage the user has chosen."""
     print(f"the cost of {user_needs} is : ${data_list[user_needs]['cost']} ")
 
 def subtracting_resources(value, user_needs):
+    """handles the resource management by subtracting the supplies."""
     supplies_water = value['water'] - data_list[user_needs]['ingredients']['water']
     value['water'] = supplies_water
     supplies_coffee = value['coffee'] - data_list[user_needs]['ingredients']['coffee']
@@ -34,6 +37,7 @@ def subtracting_resources(value, user_needs):
         pass
 
 def checking(user_needs):
+    """checks if the supplies are enough to make a beverage"""
     if resource_list["water"] > data_list[user_needs]['ingredients']['water']:
         if resource_list["coffee"] > data_list[user_needs]['ingredients']['coffee']:
             try:
@@ -52,7 +56,7 @@ def checking(user_needs):
 
 
 def money(user_needs):
-
+    """handles the money part."""
     user_choice(user_needs)
 
     money_1 = int(input("Enter the number of dollars you wanna enter: "))
@@ -78,6 +82,7 @@ def money(user_needs):
         return False
 
 def make_coffee():
+    """checks the user input and returns the desired output for the other functions to perform operation."""
     while True:
         user_needs = input("What would you like? (espresso/latte/cappuccino): ").lower()
         if user_needs == "report" or user_needs == "r":
@@ -99,7 +104,7 @@ def make_coffee():
             break
 
 def main():
-    print(arts.art)  # Display ASCII art on startup
+    print(arts.art)   
     make_coffee()
 
 
